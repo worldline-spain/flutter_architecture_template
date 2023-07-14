@@ -1,0 +1,6 @@
+package com.worldline.flutter.worldline_flutter
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity() {
+}
