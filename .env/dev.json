@@ -1,5 +1,6 @@
 {
   "URL_REST_SERVICE": "https://sergiocasero.es",
   "PACKAGE_NAME": "com.worldline.flutter.dev",
+  "APP_NAME": "Worldline Flutter Dev",
   "ENVIRONMENT": "dev"
 }

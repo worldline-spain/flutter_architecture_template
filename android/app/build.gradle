@@ -44,13 +44,14 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.worldline.flutter.worldline_flutter"
+        applicationId PACKAGE_NAME
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
         minSdkVersion 16
         targetSdkVersion 33
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        resValue "string", "app_name", APP_NAME
     }
 
     buildTypes {
@@ -63,17 +64,12 @@ android {
 
     productFlavors {
         dev {
-            applicationIdSuffix ".dev"
-            resValue "string", "app_name", "Worldline dev"
             dimension "default"
         }
         prep {
-            applicationIdSuffix ".prep"
-            resValue "string", "app_name", "Worldline prep"
             dimension "default"
         }
         prod {
-            resValue "string", "app_name", "Worldline"
             dimension "default"
         }
     }
