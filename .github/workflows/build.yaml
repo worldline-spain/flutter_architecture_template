@@ -20,8 +20,6 @@ jobs:
         cache-path: '${{ runner.tool_cache }}/flutter/:os:-:version:'
     - name: Install dependencies
       run: flutter pub get
-    - name: Generate auto generated files
-      run: flutter pub run build_runner build
     - name: Verify formated files
       run: dart format . --set-exit-if-changed
     - name: Analyze code
