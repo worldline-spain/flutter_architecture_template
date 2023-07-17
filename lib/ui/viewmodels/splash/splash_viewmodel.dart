@@ -1,3 +1,4 @@
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:injectable/injectable.dart';
 import 'package:worldline_flutter/di/di.dart';
 import 'package:worldline_flutter/domain/models/errors.dart';
@@ -21,6 +22,7 @@ class SplashViewModel extends RootViewModel<SplashViewState> {
       (left) => emitValue(Error(left)),
       (right) => emitValue(Success(right)),
     );
+    FlutterNativeSplash.remove();
 
     if (response.isRight) {
       redirect();
