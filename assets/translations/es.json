@@ -1,0 +1,13 @@
+{
+  "empty_list": "Lista vacía",
+  "geocoordinates": "Coordenadas: {}",
+  "errors": {
+    "not_found": "No se ha encontrado el recurso",
+    "server": "Error en el servidor",
+    "bad_request": "Petición incorrecta",
+    "unauthorized": "No autorizado",
+    "forbidden": "No permitido",
+    "expired_session": "Sesión expirada",
+    "unknown": "Error desconocido"
+  }
+}

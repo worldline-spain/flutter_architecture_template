@@ -1,0 +1,23 @@
+image: "leoafarias/fvm"
+
+# Cache the flutter sdk, otherwise this will be installed again when a fvm command is called.
+cache:
+  paths:
+    - .fvm/flutter_sdk
+
+stages:
+  - lint
+
+before_script:
+  - fvm install
+
+lint_project:
+  tags:
+    - kazan-L
+  stage: lint
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+  script:
+    - fvm flutter pub get
+    - fvm dart format . --set-exit-if-changed
+    - fvm flutter analyze
