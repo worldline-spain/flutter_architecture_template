@@ -32,6 +32,8 @@ To configure a new project, you have change the following files:
 2. Replace the project name `worldline_flutter` in all files.
 3. Replace the package name `com.worldline.flutter` in all files.
 4. Remove all files with references to Example code.
+5. Refactor homeWorldline on `constants.dart`
+6. Rename folder on `android/app/src/main/kotlin/` to your package name
 
 ### Generate native splash
 
@@ -57,26 +59,22 @@ To run the application in each environment, you can use the following commands:
 - prep: `flutter run --flavor prep --dart-define-from-file=.env/prep.json`
 - prod: `flutter run --flavor prod --dart-define-from-file=.env/prod.json`
 
-Also, you can configure your IDE to run the application in each environment:
-
-["Android Studio environment config"](media/config.png)
+Also, you can configure your IDE to run the application in each environment.
 
 ## Generate code
 
 If you implement a new injectable file, you have to run the following command to generate the necessary code:
 
-```bash
-flutter packages pub run build_runner build
-```
+`fvm flutter packages pub run build_runner build` or `sh ./tools/generate_code.sh`
 
 Also, you can configure Android Studio to run this command automatically:
 
-1. On the configuration, add a new "External tool" execution step in the "before launch" section
-
-   !["Execution step configuration"](media/config1.png)
-
+1. On the configuration, add a new "External tool" execution step in the "before launch" section.
 2. Configure the execution step as follows:
-
-   !["Execution step configuration"](media/config2.png)
+   1. Name: injectable
+   2. Description: Run injects before launch
+   3. Program: flutter
+   4. Arguments: packages pub run build_runner build
+   5. Working directory: $ProjectFileDir$
 
 Is important to note that you have to configure the command for the three flavors.
