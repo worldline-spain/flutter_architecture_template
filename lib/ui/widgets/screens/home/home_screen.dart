@@ -7,10 +7,10 @@ import 'package:worldline_flutter/ui/widgets/components/loading_circle.dart';
 import 'package:worldline_flutter/ui/widgets/screens/root_screen.dart';
 
 class HomeScreen extends RootScreen<HomeViewState> {
-  const HomeScreen({super.key});
+  HomeScreen({super.key});
 
   @override
-  HomeViewModel get viewModel => getIt<HomeViewModel>();
+  final HomeViewModel viewModel = getIt<HomeViewModel>();
 
   @override
   Widget buildView(BuildContext context, HomeViewState state) {
