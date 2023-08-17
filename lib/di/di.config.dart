@@ -37,7 +37,7 @@ import 'package:worldline_flutter/ui/viewmodels/splash/splash_viewmodel.dart'
     as _i11;
 
 extension GetItInjectableX on _i1.GetIt {
-  // initializes the registration of main-scope dependencies inside of GetIt
+// initializes the registration of main-scope dependencies inside of GetIt
   _i1.GetIt init({
     String? environment,
     _i2.EnvironmentFilter? environmentFilter,
@@ -65,6 +65,6 @@ extension GetItInjectableX on _i1.GetIt {
   }
 }
 
-class _$DiModule extends _i16.DiModule {}
-
 class _$ApiServiceModule extends _i3.ApiServiceModule {}
+
+class _$DiModule extends _i16.DiModule {}
