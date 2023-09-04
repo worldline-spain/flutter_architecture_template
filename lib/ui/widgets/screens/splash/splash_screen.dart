@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:worldline_flutter/di/di.dart';
 import 'package:worldline_flutter/ui/viewmodels/splash/splash_viewmodel.dart';
 import 'package:worldline_flutter/ui/widgets/components/error_card.dart';
 import 'package:worldline_flutter/ui/widgets/screens/root_screen.dart';
 
-class SplashScreen extends RootScreen<SplashViewState> {
+class SplashScreen extends RootScreen<SplashViewState, SplashViewModel> {
   const SplashScreen({super.key});
 
   @override
-  SplashViewModel get viewModel => getIt<SplashViewModel>();
-
-  @override
-  Widget buildView(BuildContext context, SplashViewState state) {
+  Widget buildView(
+    BuildContext context,
+    SplashViewState state,
+    SplashViewModel viewModel,
+  ) {
     return Scaffold(
       body: Center(
         child: switch (state) {

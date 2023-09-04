@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:injectable/injectable.dart';
 import 'package:worldline_flutter/di/di.dart';
@@ -30,7 +31,7 @@ class SplashViewModel extends RootViewModel<SplashViewState> {
   }
 
   void redirect() {
-    navigator.navigateToHome();
+    navigator.navigateToHome(title: 'home.title'.tr());
   }
 }
 

@@ -1,15 +1,17 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-abstract class RootViewModel<S> extends Cubit<ViewState> {
+abstract class RootViewModel<T extends ViewState> extends Cubit<T> {
   RootViewModel(super.initialState) {
     onAttach();
   }
 
-  void emitValue(ViewState state) {
+  void emitValue(T state) {
     super.emit(state);
   }
 
   void onAttach();
 }
 
-abstract class ViewState {}
+abstract class ViewState {
+  const ViewState();
+}

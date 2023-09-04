@@ -1,6 +1,13 @@
 {
   "empty_list": "Lista vacía",
-  "geocoordinates": "Coordenadas: {}",
+  "home": {
+    "title": "Inicio",
+    "geocoordinates": "Coordenadas: {}"
+  },
+  "detail": {
+    "title": "Detalle",
+    "body": "No hay nada aquí :)"
+  },
   "errors": {
     "not_found": "No se ha encontrado el recurso",
     "server": "Error en el servidor",

@@ -22,6 +22,10 @@ class HomeViewModel extends RootViewModel<HomeViewState> {
       (right) => emitValue(Success(list: right)),
     );
   }
+
+  void navigateToDetail() {
+    navigator.navigateToDetail();
+  }
 }
 
 sealed class HomeViewState extends ViewState {}
