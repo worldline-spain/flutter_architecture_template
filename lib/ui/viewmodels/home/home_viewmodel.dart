@@ -1,5 +1,4 @@
 import 'package:injectable/injectable.dart';
-import 'package:worldline_flutter/di/di.dart';
 import 'package:worldline_flutter/domain/models/errors.dart';
 import 'package:worldline_flutter/domain/models/example/example.dart';
 import 'package:worldline_flutter/domain/repositories/example/example_repository.dart';
@@ -8,11 +7,10 @@ import 'package:worldline_flutter/ui/viewmodels/root_viewmodel.dart';
 
 @Injectable()
 class HomeViewModel extends RootViewModel<HomeViewState> {
-  final _exampleRepository = getIt<ExampleRepository>();
+  final ExampleRepository _exampleRepository;
+  final MainNavigator _navigator;
 
-  MainNavigator get navigator => getIt<MainNavigator>();
-
-  HomeViewModel() : super(Loading());
+  HomeViewModel(this._navigator, this._exampleRepository) : super(Loading());
 
   @override
   void onAttach() async {
@@ -24,7 +22,7 @@ class HomeViewModel extends RootViewModel<HomeViewState> {
   }
 
   void navigateToDetail() {
-    navigator.navigateToDetail();
+    _navigator.navigateToDetail();
   }
 }
 
