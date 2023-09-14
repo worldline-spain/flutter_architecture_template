@@ -9,14 +9,17 @@ import 'package:worldline_flutter/ui/viewmodels/root_viewmodel.dart';
 
 @Injectable()
 class SplashViewModel extends RootViewModel<SplashViewState> {
-  final SystemRepository _systemRepository;
-  final MainNavigator _navigator;
+  final SystemRepository systemRepository;
+  final MainNavigator navigator;
 
-  SplashViewModel(this._navigator, this._systemRepository) : super(Loading());
+  SplashViewModel({
+    required this.navigator,
+    required this.systemRepository,
+  }) : super(const Loading());
 
   @override
   void onAttach() async {
-    final response = await _systemRepository.get();
+    final response = await systemRepository.get();
     response.fold(
       (left) => emitValue(Error(left)),
       (right) => emitValue(Success(right)),
@@ -29,22 +32,26 @@ class SplashViewModel extends RootViewModel<SplashViewState> {
   }
 
   void redirect() {
-    _navigator.navigateToHome(title: 'home.title'.tr());
+    navigator.navigateToHome(title: 'home.title'.tr());
   }
 }
 
-sealed class SplashViewState extends ViewState {}
+sealed class SplashViewState extends ViewState {
+  const SplashViewState();
+}
 
-class Loading extends SplashViewState {}
+class Loading extends SplashViewState {
+  const Loading();
+}
 
 class Success extends SplashViewState {
   final Env env;
 
-  Success(this.env);
+  const Success(this.env);
 }
 
 class Error extends SplashViewState {
   final MainError error;
 
-  Error(this.error);
+  const Error(this.error);
 }

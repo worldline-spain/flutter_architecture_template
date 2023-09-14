@@ -7,14 +7,17 @@ import 'package:worldline_flutter/ui/viewmodels/root_viewmodel.dart';
 
 @Injectable()
 class HomeViewModel extends RootViewModel<HomeViewState> {
-  final ExampleRepository _exampleRepository;
-  final MainNavigator _navigator;
+  final ExampleRepository exampleRepository;
+  final MainNavigator navigator;
 
-  HomeViewModel(this._navigator, this._exampleRepository) : super(Loading());
+  HomeViewModel({
+    required this.navigator,
+    required this.exampleRepository,
+  }) : super(const Loading());
 
   @override
   void onAttach() async {
-    final response = await _exampleRepository.get();
+    final response = await exampleRepository.get();
     response.fold(
       (left) => emitValue(Error(left)),
       (right) => emitValue(Success(list: right)),
@@ -22,22 +25,26 @@ class HomeViewModel extends RootViewModel<HomeViewState> {
   }
 
   void navigateToDetail() {
-    _navigator.navigateToDetail();
+    navigator.navigateToDetail();
   }
 }
 
-sealed class HomeViewState extends ViewState {}
+sealed class HomeViewState extends ViewState {
+  const HomeViewState();
+}
 
-class Loading extends HomeViewState {}
+class Loading extends HomeViewState {
+  const Loading();
+}
 
 class Success extends HomeViewState {
   final List<Example> list;
 
-  Success({required this.list});
+  const Success({required this.list});
 }
 
 class Error extends HomeViewState {
   final MainError error;
 
-  Error(this.error);
+  const Error(this.error);
 }
