@@ -10,10 +10,10 @@ class HomeViewModel extends RootViewModel<HomeViewState> {
   final ExampleRepository exampleRepository;
   final MainNavigator navigator;
 
-  HomeViewModel({
-    required this.navigator,
-    required this.exampleRepository,
-  }) : super(const Loading());
+  HomeViewModel(
+    this.navigator,
+    this.exampleRepository,
+  ) : super(const Loading());
 
   @override
   void onAttach() async {

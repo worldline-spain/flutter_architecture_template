@@ -12,10 +12,10 @@ class SplashViewModel extends RootViewModel<SplashViewState> {
   final SystemRepository systemRepository;
   final MainNavigator navigator;
 
-  SplashViewModel({
-    required this.navigator,
-    required this.systemRepository,
-  }) : super(const Loading());
+  SplashViewModel(
+    this.navigator,
+    this.systemRepository,
+  ) : super(const Loading());
 
   @override
   void onAttach() async {
