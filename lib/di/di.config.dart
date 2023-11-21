@@ -4,8 +4,7 @@
 // InjectableConfigGenerator
 // **************************************************************************
 
-// ignore_for_file: unnecessary_lambdas
-// ignore_for_file: lines_longer_than_80_chars
+// ignore_for_file: type=lint
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
@@ -60,12 +59,12 @@ extension GetItInjectableX on _i1.GetIt {
     gh.factory<_i12.ExampleRepository>(
         () => _i13.ExampleRepositoryImpl(gh<_i8.RemoteDatasource>()));
     gh.factory<_i14.HomeViewModel>(() => _i14.HomeViewModel(
-          gh<_i7.MainNavigator>(),
-          gh<_i12.ExampleRepository>(),
+          navigator: gh<_i7.MainNavigator>(),
+          exampleRepository: gh<_i12.ExampleRepository>(),
         ));
     gh.factory<_i15.SplashViewModel>(() => _i15.SplashViewModel(
-          gh<_i7.MainNavigator>(),
-          gh<_i10.SystemRepository>(),
+          navigator: gh<_i7.MainNavigator>(),
+          systemRepository: gh<_i10.SystemRepository>(),
         ));
     return this;
   }
