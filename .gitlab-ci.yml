@@ -18,6 +18,6 @@ lint_project:
   rules:
     - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
   script:
-    - fvm flutter pub get
-    - fvm dart format . --set-exit-if-changed
-    - fvm flutter analyze
+    - sh tool/setup.sh
+    - sh tool/format.sh
+    - sh tool/lint.sh
