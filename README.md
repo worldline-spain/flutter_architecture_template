@@ -65,7 +65,7 @@ Also, you can configure your IDE to run the application in each environment.
 
 If you implement a new injectable file, you have to run the following command to generate the necessary code:
 
-`fvm flutter packages pub run build_runner build` or `sh ./tools/generate_code.sh`
+`fvm flutter packages pub run build_runner build` or `sh ./tool/generate_code.sh`
 
 Also, you can configure Android Studio to run this command automatically:
 

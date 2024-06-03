@@ -11,17 +11,26 @@ linter:
     - always_use_package_imports
     - avoid_annotating_with_dynamic
     - avoid_bool_literals_in_conditional_expressions
+    - avoid_double_and_int_checks
     - avoid_positional_boolean_parameters
     - avoid_redundant_argument_values
     - avoid_unused_constructor_parameters
     - conditional_uri_does_not_exist
     - directives_ordering
+    - invalid_case_patterns
+    - join_return_with_assignment
     - lines_longer_than_80_chars
     - literal_only_boolean_expressions
+    - matching_super_parameters
+    - no_self_assignments
+    - one_member_abstracts
+    - prefer_asserts_in_initializer_lists
     - prefer_asserts_with_message
+    - prefer_constructors_over_static_methods
+    - prefer_final_locals
+    - prefer_mixin
     - prefer_null_aware_method_calls
     - require_trailing_commas
-    - secure_pubspec_urls
     - sized_box_shrink_expand
     - sort_pub_dependencies
     - sort_unnamed_constructors_first
@@ -32,8 +41,7 @@ linter:
     - unnecessary_statements
     - use_colored_box
     - use_decorated_box
+    - use_enums
     - use_is_even_rather_than_modulo
     - use_named_constants
     - use_string_buffers
-    - use_super_parameters
-    - prefer_final_locals

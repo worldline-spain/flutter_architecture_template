@@ -7,7 +7,7 @@ import 'package:worldline_flutter/env/env.dart';
 import 'package:worldline_flutter/ui/navigation/main_navigator.dart';
 import 'package:worldline_flutter/ui/viewmodels/root_viewmodel.dart';
 
-@Injectable()
+@injectable
 class SplashViewModel extends RootViewModel<SplashViewState> {
   final SystemRepository systemRepository;
   final MainNavigator navigator;

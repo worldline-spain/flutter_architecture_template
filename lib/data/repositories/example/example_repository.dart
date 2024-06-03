@@ -15,4 +15,9 @@ class ExampleRepositoryImpl implements ExampleRepository {
   Future<Either<MainError, List<Example>>> get() {
     return _remoteDatasource.getExample();
   }
+
+  @override
+  Future<Either<MainError, void>> save() {
+    throw UnimplementedError();
+  }
 }
