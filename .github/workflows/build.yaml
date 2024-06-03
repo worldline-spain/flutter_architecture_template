@@ -11,6 +11,8 @@ jobs:
     - name: Configure enviroment
       uses: actions/checkout@v3
     - uses: kuhnroyal/flutter-fvm-config-action@v1
+      with:
+            path: '.fvmrc'
     - name: Download flutter
       uses: subosito/flutter-action@v2
       with:
