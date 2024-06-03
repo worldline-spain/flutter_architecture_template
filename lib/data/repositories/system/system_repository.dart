@@ -15,7 +15,7 @@ class SystemRepositoryImpl implements SystemRepository {
   Future<Either<MainError, Env>> get() {
     return _localDatasource.getEnvironment();
   }
-  
+
   @override
   Future<Either<MainError, bool>> save() {
     throw UnimplementedError();
