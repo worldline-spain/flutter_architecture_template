@@ -27,4 +27,9 @@ class DefaultRemoteDatasource implements RemoteDatasource {
       (right) => ExampleDto.fromJson(right).toModel(),
     );
   }
+  
+  @override
+  Future<Either<MainError, void>> saveExample() {
+    throw UnimplementedError();
+  }
 }

@@ -4,4 +4,5 @@ import 'package:worldline_flutter/env/env.dart';
 
 abstract interface class LocalDataSource {
   Future<Either<MainError, Env>> getEnvironment();
+  Future<Either<MainError, bool>> getBool();
 }

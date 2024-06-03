@@ -17,4 +17,9 @@ class DefaultLocalDataSource implements LocalDataSource {
       return Future.value(Left(UnknownError()));
     }
   }
+  
+  @override
+  Future<Either<MainError, bool>> getBool() {
+    throw UnimplementedError();
+  }
 }
