@@ -3,12 +3,8 @@ import 'package:worldline_flutter/domain/models/errors.dart';
 
 /// Convert dio errors to domain errors
 MainError errorsHandler(DioException error) {
-  final (String httpCode, String apiErrorMessage) = _apiRest(error.response);
+  final (int errorCode, String apiErrorMessage) = _apiRest(error.response);
 
-  final int errorCode = (httpCode.isEmpty
-          ? error.response?.statusCode
-          : int.tryParse(httpCode)) ??
-      0;
   switch (errorCode) {
     case 400:
       return BadRequestError(
@@ -41,9 +37,9 @@ MainError errorsHandler(DioException error) {
 }
 
 /// Convert api messages
-(String, String) _apiRest(Response? response) {
+(int, String) _apiRest(Response? response) {
   String apiErrorMessage = '';
-  int errorCode = response?.statusCode ?? 500;
+  final int errorCode = response?.statusCode ?? 500;
   if (response != null) {
     final data = response.data;
     if (data is List) {
