@@ -43,6 +43,7 @@ MainError errorsHandler(DioException error) {
 /// Convert api messages
 (String, String) _apiRest(Response? response) {
   String apiErrorMessage = '';
+  int errorCode = response?.statusCode ?? 500;
   if (response != null) {
     final data = response.data;
     if (data is List) {
@@ -54,5 +55,5 @@ MainError errorsHandler(DioException error) {
   } else {
     apiErrorMessage = 'Empty or invalid response';
   }
-  return ('500', apiErrorMessage);
+  return (errorCode, apiErrorMessage);
 }
